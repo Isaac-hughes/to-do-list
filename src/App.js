@@ -28,7 +28,7 @@ class App extends React.Component {
 
   removeTask = (index) => {
     let delArr = [...this.state.taskArr];
-    delArr.splice(index);
+    delArr.splice(index, 1);
     this.setState({ taskArr: delArr });
   }
 
@@ -37,10 +37,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="inputs">
-          <form onSubmit={this.handleSubmit}>
-            <input className="inputBox" type="text" name="task" value={this.state.task} onChange={this.taskUpdate}/>
+          <form onSubmit={this.handleSubmit} className="inputForm">
+            <input className="inputBox" type="text" name="task" value={this.state.task} onChange={this.taskUpdate} autoComplete="off"/>
             <button className="submit" type="submit" disabled={isDisabled}>Submit</button>
           </form>
+        </div>
+        <div className="todoList">
           {this.state.taskArr.map((item, index) => {
             return <ListItem key={index} compTask={this.compTask} removeTask={this.removeTask} itemNumber={index} item={item}/>
           })}
@@ -52,10 +54,12 @@ class App extends React.Component {
 
 const ListItem = (props) => {
   return(
-    <div>
+    <div className="todoItem">
       <h2 className="taskItem">{props.item}</h2>
+      <div className="controlButtons">
       <button className="compButton" onClick={() => {props.compTask(props.itemNumber)}}>Completed</button>
       <button className="removeButton" onClick={() => {props.removeTask(props.itemNumber)}}>Remove Task</button>
+      </div>
     </div>
   )
 }
