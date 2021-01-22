@@ -35,7 +35,7 @@ const App = () => {
     <div className="App">
       <div className="inputs">
         <form onSubmit={handleSubmit} className="inputForm">
-          <input className="inputBox" type="text" name="task" value={task} onChange={taskUpdate} autoComplete="off" placeholder="What do you need to do!"/>
+          <input className="inputBox" type="text" name="task" value={task} onChange={taskUpdate} autoComplete="off" placeholder="To-Do!"/>
           <button className="submit" type="submit" disabled={isDisabled}>Submit</button>
         </form>
       </div>
