@@ -46,6 +46,11 @@
   padding: 10px;
 }
 
+input::placeholder{
+  color: #fcf8e8;
+  opacity: 70%;
+}
+
 .submit {
   height: auto;
   width: auto;
