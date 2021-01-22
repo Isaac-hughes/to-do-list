@@ -60,6 +60,7 @@ input::placeholder{
   font-size: 2em;
   padding: 10px;
   opacity: 1.0;
+  /* Test Comment */
   background-color: #fcf8e8;
   color: #df7861;
   border: none;
@@ -69,6 +70,7 @@ input::placeholder{
 
 .submit:disabled {
   opacity: 0.5;
+  /* test comment */
 }
 
 .todoList{
